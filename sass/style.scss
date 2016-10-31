@@ -26,6 +26,8 @@ src: local('Avenir Next LT Pro Regular'), url('../assets/fonts/AvenirNextLTPro-R
 
 
 
+
+
 /*============================================================================
   VARIABLES
 ==============================================================================*/
@@ -78,6 +80,11 @@ body {
 h1,h2,h3,h4,p,a{
     font-size: 1rem;
     margin:0px;
+}
+
+
+.feedback{
+    color:#f00;
 }
 
 li{

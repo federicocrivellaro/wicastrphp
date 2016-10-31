@@ -14,7 +14,7 @@ $(document).ready(function() {
         var formData = $(this).serializeObject();
         reports.push(formData);
         jsonString=JSON.stringify(reports);
-        console.log(jsonString);
+        $('.feedback').html('start ajax');
         $.ajax({
             headers: {
                 'Accept': 'application/json',
@@ -29,9 +29,13 @@ $(document).ready(function() {
             data: jsonString,
             success: function(data, status) {
                 drawReports(data);
+                $('.feedback').html('done');
+
+
             },
             error: function(request, status, error) {
-                console.log(error);
+                $('.feedback').html(error);
+
             }
         });
     });
