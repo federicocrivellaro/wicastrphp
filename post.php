@@ -11,6 +11,7 @@
     $reports = array();
     fwrite($reports_file, json_encode($reports));
     fclose($reports_file);
+    chwon($app_path."/data/cache/reports.json", "www-data");
   }
 
   $reports_file = fopen($reports_path, "w") or die("Unable to open file!");

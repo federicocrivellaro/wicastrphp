@@ -10,10 +10,11 @@
     	$reports = array();
 		fwrite($reports_file, json_encode($reports));
 		fclose($reports_file);
+		chwon($app_path."/data/cache/reports.json", "www-data");
   	}else{
   		chmod($app_path."/data/cache", 0755);
   	}
-  	
+
 	$option = $_GET['file'];
 	$json = file_get_contents("data/".$option.".json");
 
