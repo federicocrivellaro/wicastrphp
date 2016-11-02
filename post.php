@@ -4,9 +4,8 @@
   $reports_path = $app_path."/cache/reports.json";
   
   $reports = file_get_contents('php://input');
-
+  
   if (!file_exists($app_path."/cache")){
-
     // CREATE FOLDER 
     mkdir($app_path."/cache", 0755, true);
 
@@ -15,7 +14,7 @@
     $reports = array();
     fwrite($reports_file, json_encode($reports));
     fclose($reports_file);
-    chown($app_path."/cache/reports.json", "www-data");
+    //chown($app_path."/cache/reports.json", "www-data");
   }
 
   $reports_file = fopen($reports_path, "w") or die("Unable to open file!");

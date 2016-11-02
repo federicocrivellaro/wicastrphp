@@ -24,6 +24,7 @@
         echo substr(sprintf('%o', fileperms($app_path."/cache/reports.json")), -4)."<br/>";
       ?>
       <div class="list"></div>
+      <div class="feedback"></div>
       <form action="/post.php" method="post">
         <input type="range" name="value">
         <!--
