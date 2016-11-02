@@ -54,13 +54,10 @@
   <script type="text/javascript" src="assets/libraries/hammer/hammer-time.min.js"></script>
   <script type="text/javascript" src="assets/libraries/roundSlider-1.3/roundslider.min.js"></script>
   <script type="text/javascript" src="assets/libraries/d3/d3.min.js"></script>
-
-
   <script type="text/javascript" src="js/common.js"></script>
   <script type="text/javascript" src="js/dataCheckConversion.js"></script>
   <script type="text/javascript" src="js/form.js"></script>
   <script type="text/javascript" src="js/PieBarChart.js"></script>
-
   <script type="text/javascript" src="js/init.js"></script>
 
     <!-- /build -->
