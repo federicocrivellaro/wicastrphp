@@ -8,7 +8,6 @@
   fwrite($reports_file,$reports);
   fclose($reports_file);
 
-
   $json = file_get_contents("data/cache/reports.json");
   if ($json === false) {
       $json = json_encode(array("jsonError", json_last_error_msg()));
