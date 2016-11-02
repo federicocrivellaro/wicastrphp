@@ -7,6 +7,7 @@
 
   if (!file_exists($app_path."/data/cache")){
     mkdir($app_path."/data/cache", 0755, true);
+    chwon($app_path."/data/cache/", "www-data");
     $reports_file = fopen($reports_path, "w") or die("Unable to open file!");
     $reports = array();
     fwrite($reports_file, json_encode($reports));
