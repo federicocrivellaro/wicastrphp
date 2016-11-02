@@ -1,0 +1,37 @@
+.pieBarChart{
+  position: relative;
+  padding-top:20px;
+  padding-bottom:20px;
+}
+.pieBarChart path {  stroke: #fff; }
+.pieBarChart path:hover {  opacity:0.9; }
+.pieBarChart rect:hover {  fill:blue; }
+.pieBarChart .axis {  font: 10px sans-serif; }
+.pieBarChart .legend tr{    border-bottom:1px solid grey; }
+.pieBarChart .legend tr:first-child{    border-top:1px solid grey; }
+
+.pieBarChart .axis path,
+.pieBarChart .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.pieBarChart .x.axis path {  display: none; }
+
+
+.pieBarChart .legend{
+    padding-left:20px;
+    display:inline-block;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+.pieBarChart .legend td{
+    padding:4px 5px;
+    vertical-align:bottom;
+    text-align: left;
+}
+.pieBarChart .legendFreq, .legendPerc{
+    align:right;
+    width:50px;
+}

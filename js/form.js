@@ -34,10 +34,11 @@ function drawForm() {
             label = "* " + label;
             mandatory = true;
         }
-        var field='<div class="swiper-slide">';
+        var field;
         switch (id) {
             case 1: // PROGRESS BAR 
-                field = field + '<div class="form-group row alert " data-mandatory="' + mandatory + '">'+
+                field =
+                    '<div class="form-group row alert " data-mandatory="' + mandatory + '">'+
                         '<label class="control-label" for="editReportField' + i + '">' + label + '</label>'+
                         '<input type="text" readonly id="editReportField' + i + '" data-id="' + id + '" class="form-control readout" value="0"></input>'+
                         '<div id="editReportFieldSlider' + i + '"  data-fieldindex="' + i + '" class="margin-top gth_spinner"></div>'+
@@ -46,18 +47,18 @@ function drawForm() {
 
                 break;
             case 3: // DATE 
-                field = field +'<div class="form-group row alert " data-mandatory="' + mandatory + '">'+
+                field ='<div class="form-group row alert " data-mandatory="' + mandatory + '">'+
                             '<label class="control-label" for="editReportField' + i + '">' + label + '</label>'+
                             '<input class="form-control" type="text" id="editReportField' + i + '" data-id="' + id + '" data-fieldindex="' + i + '" ></input>'+
                         '</div>';
                 report.fields[i].value = null;
                 break;
             case 4: // LOCATION
-                field = field +'<div class="form-group row alert " data-mandatory="' + mandatory + '"><label class="control-label" for="editReportField' + i + '">' + label + '</label><input type="text" id="editReportFieldMapInput" data-id="' + id + '"   data-fieldindex="' + i + '" class="form-control" ></input><div class="rInterfaceMap" id="editReportFieldMap"></div></div>';
+                field = $('<div class="form-group row alert " data-mandatory="' + mandatory + '"><label class="control-label" for="editReportField' + i + '">' + label + '</label><input type="text" id="editReportFieldMapInput" data-id="' + id + '"   data-fieldindex="' + i + '" class="form-control" ></input><div class="rInterfaceMap" id="editReportFieldMap"></div></div>');
                 report.fields[i].value = null;
                 break;
             case 5: // TEXT AREA
-                field = field +
+                field =
                     '<div class="form-group row alert " data-mandatory="' + mandatory + '">' +
                       '<label class="col-xs-12 control-label" for="editReportField' + i + '">' + label + '</label>' +
                       '<textarea class="col-xs-12 editReportFieldTextarea" rows="3" id="editReportField' + i + '" data-id="' + id + '" data-fieldindex="' + i + '" data-type="editReportField" ></textarea>' +
@@ -65,126 +66,83 @@ function drawForm() {
                 report.fields[i].value = null;
                 break;
             case 6: // PICTURE
-                field = field +'<div class="form-group row alert pictureField" data-mandatory="' + mandatory + '"><label class="control-label col-xs-12 no-padding" for="editReportField' + i + '">' + label + '</label><label class="control-label" for="editReportField' + i + '"><img src="assets/imgs/picture.png"></label><input class="form-control hidden" id="editReportField' + i + '" data-type="editReportField" data-id="' + id + '"   data-fieldindex="' + i + '" type="file"></input></div>';
+                field = $('<div class="form-group row alert pictureField" data-mandatory="' + mandatory + '"><label class="control-label col-xs-12 no-padding" for="editReportField' + i + '">' + label + '</label><label class="control-label" for="editReportField' + i + '"><img src="'+assetsRoot+'assets/imgs/picture.png"></label><input class="form-control hidden" id="editReportField' + i + '" data-type="editReportField" data-id="' + id + '"   data-fieldindex="' + i + '" type="file"></input></div>');
                 report.fields[i].value = null;
                 break;
             case 8: // SOCIAL
                 var fb = domain.fields[i].useFb;
                 var tw = domain.fields[i].useTwitter;
                 report.fields[i].value = [false, false];
-                field = field+
-                    '<div class="form-group row alert " data-mandatory="' + mandatory + '">'+
-                       '<label class="control-label col-xs-12 no-padding">' + label + '</label>';
-                if (fb === true) {
-                   field = field+
-                        '<button type="button" class="btn btn-default editReportFieldSocial" data-id="' + id + '" data-social="facebook"  data-fieldindex="' + i + '">Facebook</button>';
+                field = $('<div class="form-group row alert " data-mandatory="' + mandatory + '"><label class="control-label col-xs-12 no-padding">' + label + '</label></div>');
+                if (fb == true) {
+                    var $fb = ('<button type="button" class="btn btn-default editReportFieldSocial" data-id="' + id + '" data-social="facebook"  data-fieldindex="' + i + '">Facebook</button>');
+                    field.append($fb);
                 }
-                if (tw === true) {
-                    field = field+
-                        '<button type="button" class="btn btn-default margin-left editReportFieldSocial" data-id="' + id + '"  data-social="twitter" data-fieldindex="' + i + '">Twitter</button>';
+                if (tw == true) {
+                    var $tw = ('<button type="button" class="btn btn-default margin-left editReportFieldSocial" data-id="' + id + '"  data-social="twitter" data-fieldindex="' + i + '">Twitter</button>');
+                    field.append($tw);
                 }
-                field = field+'</div>';
                 break;
             case 11: // TEXT BUTTONS
                 report.fields[i].value = null;
                 var multi = domain.fields[i].multiselection;
-                field = field+
-                    '<div class="form-group row alert " data-mandatory="' + mandatory + '"><label class="control-label col-xs-12 no-padding">' + label + '</label>'+
-                    '<div class="editReportFieldBtnGroup" data-multiselection="' + multi + '" data-id="' + id + '"  data-fieldindex="' + i + '">';
-                var  buttons="";
+                field = $('<div class="form-group row alert " data-mandatory="' + mandatory + '"><label class="control-label col-xs-12 no-padding">' + label + '</label><div class="editReportFieldBtnGroup" data-multiselection="' + multi + '" data-id="' + id + '"  data-fieldindex="' + i + '"></div>');
                 for (x = 0; x < domain.fields[i].textOptions.length; x++) {
                     var val = domain.fields[i].textOptions[x];
-                    buttons=buttons+'<button class="btn btn-default col-xs-12">' + val + '</button>';
+                    var $button;
+                    var $button = $('<button class="btn btn-default col-xs-12">' + val + '</button>');
+                    $button.appendTo(field.children().eq(1));
                 }
-                field=field+buttons+'</div>';
                 break;
             case 12: // SPINNER
                 report.fields[i].value = null;
                 var val = "no value";
-                field = field+
-                    '<div class="form-group row alert " data-mandatory="' + mandatory + '">'+
-                        '<label class="control-label col-xs-12 no-padding">' + label + '</label>'+
-                        '<div class="dropdown"  id="editReportField' + i + '" data-id="' + id + '"  data-fieldindex="' + i + '">'+
-                            '<button class="btn btn-default dropdown-toggle" type="button" id="editReportField' + i + 'Button" data-toggle="dropdown"><span>' + val + '</span><span class="caret"></span></button>';                
-                
-                var dropList ='<ul class="dropdown-menu editReportFieldSpinner" role="menu" aria-labelledby="editReportField' + i + 'Button">'+
-                                '<li><a role="menuitem" href="#">no value</a></li>';
-                             
-                var buttons="";
+                field = $('<div class="form-group row alert " data-mandatory="' + mandatory + '"><label class="control-label col-xs-12 no-padding">' + label + '</label><div class="dropdown"  id="editReportField' + i + '" data-id="' + id + '"  data-fieldindex="' + i + '"></div>');
+                var $dropButton = $('<button class="btn btn-default dropdown-toggle" type="button" id="editReportField' + i + 'Button" data-toggle="dropdown"><span>' + val + '</span><span class="caret"></span></button>');
+                $dropButton.appendTo(field.children().eq(1));
+                var $dropList = $('<ul class="dropdown-menu editReportFieldSpinner" role="menu" aria-labelledby="editReportField' + i + 'Button"></ul>');
+                var $button = $('<li><a role="menuitem" href="#">no value</a></li>');
+                $button.appendTo($dropList);
                 for (x = 0; x < domain.fields[i].textOptions.length; x++) {
-                    var tempVal = domain.fields[i].textOptions[x];
-                    buttons=buttons+'<li><a role="menuitem" href="#">' + tempVal + '</a></li>';
+                    var val = domain.fields[i].textOptions[x];
+                    var $button = $('<li><a role="menuitem" href="#">' + val + '</a></li>');
+                    $button.appendTo($dropList);
                 }
-                dropList=dropList+buttons+'</ul>';
-
-                field=field+dropList+'</div></div>';
+                $dropList.appendTo(field.children().eq(1));
                 break;
             case 13: // NUMBER
                 report.fields[i].value = null;
-                field = field +
-                        '<div class="form-group row alert " data-mandatory="' + mandatory + '">'+
-                            '<label class="control-label" for="editReportField' + i + '">' + label + '</label>'+
-                            '<input type="text" id="editReportField' + i + '" data-id="' + id + '"   data-fieldindex="' + i + '" class="form-control numeric" data-type="editReportField" ></input>'+
-                        '</div>';
+                field = $('<div class="form-group row alert " data-mandatory="' + mandatory + '"><label class="control-label" for="editReportField' + i + '">' + label + '</label><input type="text" id="editReportField' + i + '" data-id="' + id + '"   data-fieldindex="' + i + '" class="form-control numeric" data-type="editReportField" ></input></div>');
                 break;
             case 14: // NUMBER
                 report.fields[i].value = null;
                 var description = domain.fields[i].description;
-                field = field +
-                        '<div class="form-group row alert " data-mandatory="' + mandatory + '">'+
-                        '<label class="control-label" for="editReportField' + i + '">' + label + '</label>'+
-                        '<p>' + description + '</p></div>';
+                field = $('<div class="form-group row alert " data-mandatory="' + mandatory + '"><label class="control-label" for="editReportField' + i + '">' + label + '</label><p>' + description + '</p></div>');
                 break;
             case 15: // IMAGE BUTTONS
                 report.fields[i].value = null;
                 var multi = domain.fields[i].multiselection;
-                field = field+
-                    '<div class="form-group row alert " data-mandatory="' + mandatory + '">'+
-                        '<label class="control-label col-xs-12 no-padding">' + label + '</label>'+
-                        '<div class="editReportFieldBtnGroup" data-multiselection="' + multi + '" data-id="' + id + '"  data-fieldindex="' + i + '">';
-                var buttons="";
+                field = $('<div class="form-group row alert " data-mandatory="' + mandatory + '"><label class="control-label col-xs-12 no-padding">' + label + '</label><div class="editReportFieldBtnGroup" data-multiselection="' + multi + '" data-id="' + id + '"  data-fieldindex="' + i + '"></div>');
                 for (x = 0; x < domain.fields[i].textOptions.length; x++) {
                     var val = domain.fields[i].textOptions[x];
                     var image = domain.fields[i].imageOptions[x];
-
-                    var text;
-
+                    var $button = $('<button class="btn btn-default col-xs-6 col-md-6 editReportFieldBtnGroupImage"><div style=background:url("' + image + '")/></button>');
+                    var $val;
                     if (domain.fields[i].showTextUnderImages == true) {
-                        text = '<div class="col-xs-12" style="white-space:normal">' + val + '</div>';
+                        $val = $('<div class="col-xs-12" style="white-space:normal">' + val + '</div>');
                     } else {
-                        text = '<div class="col-xs-12 hidden">' + val + '</div>';
+                        $val = $('<div class="col-xs-12 hidden">' + val + '</div>');
                     }
-
-                    buttons = buttons+
-                                '<button class="btn btn-default col-xs-6 col-md-6 editReportFieldBtnGroupImage">'+
-                                    '<div style=background:url("' + image + '")/>'+
-                                    text+
-                                '</button>';
-                   
+                    $val.appendTo($button);
+                    $button.appendTo(field.children().eq(1));
                 }
-                field=field+buttons+'</div>';
                 break;
             default:
                 report.fields[i].value = null;
-                field = field +
-                    '<div class="form-group row alert " data-mandatory="' + mandatory + '">'+
-                    '<label class="control-label" for="editReportField' + i + '">' + label + '</label>'+
-                    '<input type="text" id="editReportField' + i + '" data-id="' + id + '"   data-fieldindex="' + i + '" data-type="editReportField" class="form-control" ></input>'+
-                    '</div>';
-            }
-        field = field +'</div>';
+                field = $('<div class="form-group row alert " data-mandatory="' + mandatory + '"><label class="control-label" for="editReportField' + i + '">' + label + '</label><input type="text" id="editReportField' + i + '" data-id="' + id + '"   data-fieldindex="' + i + '" data-type="editReportField" class="form-control" ></input></div>');
+        }
 
         $('#gth_form .formfields').append(field);
-
-        var swiper = new Swiper('.swiper-container', {
-            pagination: '.swiper-pagination',
-            paginationClickable: true,
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            spaceBetween: 80,
-            simulateTouch:false
-        });
-
 
         if (id == 13) {
             $('.numeric').numeric();
@@ -424,7 +382,7 @@ function longToGoogleLocaleString(value) {
 
 $('#gth_form').on('submit',function (e) {
     e.preventDefault();
-    $('button[type=submit]',this).attr('disabled','disabled');
+    $('#submittingForm').show();
     var submitButton=$('button[type=submit]',this);
     report.insert_time=new Date().getTime();
     report.uuid=uuid;
@@ -563,7 +521,7 @@ function sendReport(){
             },2000);
                 
         }else{
-            $('#gth_thanks').show();
+            
             /*
             if(socialPublish[0]==true){
                 setTimeout(function(){
@@ -582,11 +540,12 @@ function sendReport(){
 }
 
 function closeAfterPost(){
-    $('button[type=submit]').removeAttr("disabled");
     $('#gth_form')[0].reset();
     $('.editReportFieldBtnGroup button').removeClass('btn-primary');
     $('.editReportFieldBtnGroup button').removeClass('btn-primary');
     $('.pictureField label img').attr('src',defaultSrc);
+    $('#submittingForm').hide();
+    $('#gth_thanks').show();
     buildReport();
     setTimeout(function(){
         $('#gth_thanks').hide();   

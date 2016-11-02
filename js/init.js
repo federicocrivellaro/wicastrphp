@@ -6,7 +6,57 @@ var reports;
 
 $(document).ready(function() {
 
-    getReports();
+    $('.page').each(function(){
+        var pageIndex=$(this).index();
+        $(this).hammer().bind("swiperight",function(ev){
+            var $active=$('.active');
+            console.log($active.prev().length);
+            if($active.prev().length>0){
+                var prev=$active.prev();
+                $active.removeClass('active');
+                prev.addClass('active');
+            }
+            
+        }).bind("swipeleft",function(ev){
+            var $active=$('.active');
+            console.log($active.next().length);
+            if($active.next().length>0){
+                var next=$active.next();
+                $active.removeClass('active');
+                next.addClass('active');
+            }
+             
+        });
+        
+    });
+   
+
+
+    getJson('statics/revisiones',function(){
+        pieBarChart('#dashboard',fData,fOptions);
+    });
+
+
+    getJson('cache/reports',function(){
+        var data=this;
+        drawReports(data);
+//        dashboard('#dashboard',lawComparison["entities"],lawComparison["values"]);
+    });
+
+    radius=(($( window ).innerWidth())/2) - 30 ;
+    $("#type").roundSlider({
+          sliderType: "min-range",
+            circleShape: "full",
+            min: -100,
+            max: 100,
+            value: -100,
+            startAngle: 90,
+            editableTooltip: false,
+            radius: radius,
+            width: 20,
+            handleShape: "dot"
+    });
+
 
 
     $('form').on('submit', function(e) {
@@ -18,8 +68,7 @@ $(document).ready(function() {
         $.ajax({
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json', 
-                'charset':'utf-8'
+                'Content-Type': 'application/json'
             },
             type: 'POST',
             url: 'post.php',
@@ -41,15 +90,15 @@ $(document).ready(function() {
     });
 
 
-    function getReports(file) {
-        var file="reports";
+    function getJson(file,callback) {
         $.ajax({
             // Post select to url.
             type: 'post',
-            url: 'get.php?file=reports',
+            url: 'get.php?file='+file,
             dataType: 'json', // expected returned data format.
             success: function(data) {
-                drawReports(data);
+                callback.call(data);
+                
             },
             complete: function(data) {
                 // do something, not critical.
@@ -62,7 +111,7 @@ $(document).ready(function() {
         reports=data;
         $('.list').empty();
         for (var i = 0; i < reports.length; i++) {
-            $('.list').append('<p>'+reports[i]["title"]+'</p>');
+            $('.list').append('<p>'+reports[i]["value"]+'</p>');
         }
 
     }

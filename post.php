@@ -1,10 +1,13 @@
 <?php
 
+  $app_path = getcwd();
+  $reports_path = $app_path."/data/cache/reports.json";
+  
+  $reports = file_get_contents('php://input');
+  $reports_file = fopen($reports_path, "w") or die("Unable to open file!");
+  fwrite($reports_file,$reports);
+  fclose($reports_file);
 
-  $params = file_get_contents('php://input');
-  $message_file = fopen("data/cache/reports.json", "w") or die("Unable to open file!");
-  fwrite($message_file,$params);
-  fclose($message_file);
 
   $json = file_get_contents("data/cache/reports.json");
   if ($json === false) {
@@ -14,5 +17,5 @@
       }
       http_response_code(500);
   }
-  echo $json;
+  echo $reports;
 ?>
