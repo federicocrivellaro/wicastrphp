@@ -18,8 +18,10 @@
     <div class="page active">
       <?php
         $app_path = getcwd();
-        echo substr(sprintf('%o', fileperms($app_path."/data/cache")), -4);
-        echo substr(sprintf('%o', fileperms($app_path."/data/cache/reports.json")), -4);
+        $reports_path = $app_path."/cache/reports.json";
+        echo $reports_path."<br/>";
+        echo substr(sprintf('%o', fileperms($app_path."/cache")), -4)."<br/>";
+        echo substr(sprintf('%o', fileperms($app_path."/cache/reports.json")), -4)."<br/>";
       ?>
       <div class="list"></div>
       <form action="/post.php" method="post">
@@ -34,11 +36,12 @@
         <button type="submit"> SUBMIT</button>
       </form>
     </div>
+    <!--
     <div class="page">  
       <div class="container-fluid">
         <div id="dashboard" class="pieBarChart"></div>
       </div>  
-    </div>  
+    </div> --> 
   </div>  
 
 

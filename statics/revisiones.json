@@ -1,0 +1,110 @@
+{
+	"_id": "58172d8c0a975a2f4cc8ecd8",
+	"name": "REVISIONES OCT 30",
+	"i18n": {
+		"primary": "en",
+		"others": []
+	},
+	"fb_text": "",
+	"twitter_text": "",
+	"client_id": "5810faab0a975a2f4cc8eb3e",
+	"desc": "Tu punto de vista en negociaciones",
+	"buttons_text": "Choose an option",
+	"viewIconLabel": "Datos",
+	"createIconLabel": "Vota tu posicion",
+	"origBackgroundUrl": "https://gather.siineserver.com/GatherServerLive/GatherAdmin/imgs/defaultBackground.jpg",
+	"backgroundUrl": "https://gather.siineserver.com/GatherServerLive/GatherAdmin/imgs/defaultBackgroundEdited.jpg",
+	"bannerUrl": "https://gather.siineserver.com/GatherServerLive/GatherAdmin/imgs/defaultBanner.jpg",
+	"countries": [],
+	"active": false,
+	"showName": true,
+	"hidePublicMap": true,
+	"fields": [{
+		"@type": "TypeVariableTextLabel",
+		"_id": 11,
+		"label": "Tu voto en el referendum era?",
+		"description": "",
+		"textOptions": ["Si", "No", "No vote (no pudo)", "No vote (abstencion)"],
+		"mandatory": false,
+		"multiselection": true,
+		"id": "581731800a975a2f4cc8ecdc"
+	}, {
+		"@type": "TypeVariableTextLabel",
+		"_id": 11,
+		"label": "No pude votar, mi voto hubiera sido",
+		"description": "",
+		"textOptions": ["Si", "No", "Abstencion"],
+		"mandatory": false,
+		"multiselection": true,
+		"id": "581731800a975a2f4cc8ecdd"
+	}, {
+		"@type": "TypeProgressPercentage",
+		"_id": 1,
+		"label": "support stiffer penalties for rebels who committed war crimes?",
+		"description": "",
+		"mandatory": true,
+		"max_value": 100,
+		"step": "1",
+		"id": "581731800a975a2f4cc8ecde"
+	}, {
+		"@type": "TypeVariableImageLabel",
+		"_id": 15,
+		"label": "stiffer penalties for war criminals?",
+		"description": "",
+		"textOptions": ["Si, (si no, no hay acuerdo)", "Si, debe ser", "Si, que responden algo", "No se"],
+		"imageOptions": ["https://gather.siineserver.com/GatherServerLive/GatherAdmin/imgs/default_src.png", "https://gather.siineserver.com/GatherServerLive/GatherAdmin/imgs/default_src.png", "https://gather.siineserver.com/GatherServerLive/GatherAdmin/imgs/default_src.png", "https://gather.siineserver.com/GatherServerLive/GatherAdmin/imgs/default_src.png"],
+		"mandatory": false,
+		"multiselection": true,
+		"showTextUnderImages": true,
+		"id": "581731800a975a2f4cc8ecdf"
+	}, {
+		"@type": "TypeProgressPercentage",
+		"_id": 1,
+		"label": "support a political role for the FARC?",
+		"description": "",
+		"mandatory": true,
+		"max_value": 100,
+		"step": 10,
+		"id": "581731800a975a2f4cc8ece0"
+	}, {
+		"@type": "TypeVariableImageLabel",
+		"_id": 15,
+		"label": "a political role for the FARC",
+		"description": "",
+		"textOptions": ["absolutamente no", "no", "negativo", "negotiable", "con condiciones", "si", "absolutamente"],
+		"imageOptions": ["https://gather.siineserver.com/GatherServerLive/GatherAdmin/imgs/default_src.png", "https://gather.siineserver.com/GatherServerLive/GatherAdmin/imgs/default_src.png", "https://gather.siineserver.com/GatherServerLive/GatherAdmin/imgs/default_src.png", "https://gather.siineserver.com/GatherServerLive/GatherAdmin/imgs/default_src.png", "https://gather.siineserver.com/GatherServerLive/GatherAdmin/imgs/default_src.png", "https://gather.siineserver.com/GatherServerLive/GatherAdmin/imgs/default_src.png", "https://gather.siineserver.com/GatherServerLive/GatherAdmin/imgs/default_src.png"],
+		"mandatory": false,
+		"multiselection": true,
+		"showTextUnderImages": true,
+		"id": "581731800a975a2f4cc8ece1"
+	}, {
+		"@type": "TypeTextarea",
+		"_id": 5,
+		"label": "Tu opinion y comentarios",
+		"description": "",
+		"mandatory": false,
+		"id": "581731800a975a2f4cc8ece2"
+	}, {
+		"@type": "TypeProgressPercentage",
+		"_id": 1,
+		"label": "support fundamental reform of the peace negotation now?",
+		"description": "\"back to the drawing board\"",
+		"mandatory": true,
+		"max_value": 100,
+		"step": "1",
+		"id": "581731800a975a2f4cc8ece3"
+	}, {
+		"@type": "TypeProgressPercentage",
+		"_id": 1,
+		"label": "Modificar un poco condiciones para llegar a 50% apoyo",
+		"description": "",
+		"mandatory": true,
+		"max_value": 100,
+		"step": "1",
+		"id": "581731800a975a2f4cc8ece4"
+	}],
+	"infoLink": "https://www.washingtonpost.com/world/the_americas/everything-on-the-table-in-revived-colombia-peace-talks/2016/10/28/f4683ff6-9d3c-11e6-b552-b1f85e484086_story.html",
+	"long_desc": "He has demanded stiffer penalties for rebels who committed war crimes and many of his supporters reject a political role for the FARC, a 7,000-strong peasant army that is Latin America’s last remaining major insurgency.\n\nThe rebels, who would be spared jail time under the accord, are insisting they won’t go back to the drawing board and throw out more than four years of arduous negotiations with the government.",
+	"map_text": "",
+	"summary_text": ""
+}
