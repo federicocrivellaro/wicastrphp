@@ -17,7 +17,6 @@
   <div class="pages">
     <div class="page active">
       <div class="list"></div>
-      <div class="feedback"></div>
       <form action="/post.php" method="post">
         <input type="range" name="value">
         <!--
@@ -29,13 +28,13 @@
         -->
         <button type="submit"> SUBMIT</button>
       </form>
+      
     </div>
-    <!--
     <div class="page">  
       <div class="container-fluid">
         <div id="dashboard" class="pieBarChart"></div>
       </div>  
-    </div> --> 
+    </div>
   </div>  
 
 

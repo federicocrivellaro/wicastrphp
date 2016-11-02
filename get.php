@@ -14,14 +14,11 @@
     	$reports = array();
 		fwrite($reports_file, json_encode($reports));
 		fclose($reports_file);
-		//chown($app_path."/cache/reports.json", "www-data");
   	}else{
   		chmod($app_path."/cache", 0755);
-  		//chown($app_path."/cache/reports.json", "www-data");
   	}
 
-
-	$json = file_get_contents($app_path."/cache/".$option.".json");
+	$json=file_get_contents($app_path."/cache/reports.json");
 
 	if ($json === false) {
     	$json = json_encode(array("jsonError", json_last_error_msg()));

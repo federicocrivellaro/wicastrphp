@@ -6,7 +6,7 @@ var reports;
 
 $(document).ready(function() {
 
-    /*
+    
     $('.page').each(function(){
         var pageIndex=$(this).index();
         $(this).hammer().bind("swiperight",function(ev){
@@ -30,18 +30,18 @@ $(document).ready(function() {
         });
         
     });
-   */
+   
 
-
-    /*getJson('statics/revisiones',function(){
-        pieBarChart('#dashboard',fData,fOptions);
+    /*
+    getJson('statics/revisiones',function(){
+        
     });*/
 
 
     getJson("reports",function(){
         var data=this;
         drawReports(data);
-//        dashboard('#dashboard',lawComparison["entities"],lawComparison["values"]);
+        pieBarChart('#dashboard',fData,fOptions);
     });
 
     radius=(($( window ).innerWidth())/2) - 30 ;
@@ -59,12 +59,13 @@ $(document).ready(function() {
     });
 
 
-
+    
     $('form').on('submit', function(e) {
         e.preventDefault();
         var formData = $(this).serializeObject();
         reports.push(formData);
         jsonString=JSON.stringify(reports);
+        $('.val').html(jsonString);
         $('.feedback').html('start ajax');
         $.ajax({
             headers: {
@@ -89,7 +90,7 @@ $(document).ready(function() {
             }
         });
     });
-
+    
 
     function getJson(file,callback) {
         $.ajax({
@@ -98,7 +99,6 @@ $(document).ready(function() {
             url: 'get.php?file='+file,
             dataType: 'json', // expected returned data format.
             success: function(data) {
-                console.log(data);
                 callback.call(data);
             },
             complete: function(data) {
