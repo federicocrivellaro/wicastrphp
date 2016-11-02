@@ -16,13 +16,6 @@
 <body>
   <div class="pages">
     <div class="page active">
-      <?php
-        $app_path = getcwd();
-        $reports_path = $app_path."/cache/reports.json";
-        echo $reports_path."<br/>";
-        echo substr(sprintf('%o', fileperms($app_path."/cache")), -4)."<br/>";
-        echo substr(sprintf('%o', fileperms($app_path."/cache/reports.json")), -4)."<br/>";
-      ?>
       <div class="list"></div>
       <div class="feedback"></div>
       <form action="/post.php" method="post">
