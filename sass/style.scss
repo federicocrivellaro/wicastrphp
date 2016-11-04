@@ -15,6 +15,10 @@
 // -----------------------------------------------------------------------------
 @import "components/slider";
 // -----------------------------------------------------------------------------
+// FONT
+// -----------------------------------------------------------------------------
+@import "components/font";
+// -----------------------------------------------------------------------------
 // PIE BARCHART
 // -----------------------------------------------------------------------------
 @import "components/pieBarChart";
@@ -33,14 +37,26 @@ body {
     right: 0px;
     bottom:0px;
     overflow:hidde;
+    color:#fff;
+    text-align: center;
+}
+
+html{
+    background-image:url("../assets/imgs/back.jpg");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+h1{
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 
 
 .page{
-    background: #085078; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left top, #00BD9C , #0081C5); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left top,#00BD9C,#0081C5);
     position:absolute;
     top:0px;
     right: 0px;
@@ -64,13 +80,50 @@ body {
 }
 
 form{
-    @extend .centerInPage;
+    position:relative;
     .section{
         position:relative;
         display: block;
     }
+    button{
+        display: none;
+        position:absolute;
+        top:50%;
+        left:50%;
+        @include translate(-50%,-50%);
+        z-index: 99;
+        border-radius:50%;
+        border:none;
+        width:60px;
+        height: 60px;
+        background: radial-gradient(circle at 120% 120%,#fcfcfc,#efeff1 0%,#9b5050 100%);
+        -webkit-box-shadow: inset 0px 0px 20px -10px rgba(0,0,0,1);
+        -moz-box-shadow: inset 0px 0px 20px -10px rgba(0,0,0,1);
+        box-shadow: inset 0px 0px 20px -10px #000;
+        font-weight: 800;
+        &:hover{
+            background: radial-gradient(circle at 50% 50%,#fcfcfc,#804242 0%,#9b5050 100%);
+        }
+    }
 }
 
+
+#volume{
+    text-align: center;
+    margin: 10 auto;
+}
+
+#barchart{
+    position:absolute;
+    height: 150px;
+    bottom:0px;
+    left:0px;
+    right: 0px;
+    text-align: center;
+    .bar{
+        opacity: 0.4;
+    }
+}
 
 
 

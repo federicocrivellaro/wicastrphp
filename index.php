@@ -16,24 +16,23 @@
 <body>
   <div class="pages">
     <div class="page active">
-      <div class="list"></div>
+        <h1 class="title">
+          Welcome<br/> 
+          the music is set at
+          <span class="decibels">95db</span>
+        </h1>
+        <p>Set your ideal volume.<br/>
+        It will be adjusted every 30 minutes<br/> based on average preference</p>
       <form action="/post.php" method="post">
-        <input type="range" name="value">
-        <!--
         <section>
           <div class="control">
-              <div id="type"></div>
+              <div id="volume"></div>
           </div>
         </section>
-        -->
-        <button type="submit"> SUBMIT</button>
+        <button type="submit"></button>
       </form>
-      
-    </div>
-    <div class="page">  
-      <div class="container-fluid">
-        <div id="dashboard" class="pieBarChart"></div>
-      </div>  
+      <div class="counter"></div>
+      <div id="barchart"></div>
     </div>
   </div>  
 
@@ -54,7 +53,7 @@
   <script type="text/javascript" src="js/common.js"></script>
   <script type="text/javascript" src="js/dataCheckConversion.js"></script>
   <script type="text/javascript" src="js/form.js"></script>
-  <script type="text/javascript" src="js/PieBarChart.js"></script>
+  <script type="text/javascript" src="js/barchart.js"></script>
   <script type="text/javascript" src="js/init.js"></script>
 
     <!-- /build -->
