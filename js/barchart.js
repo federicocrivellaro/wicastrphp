@@ -20,8 +20,12 @@ function barchart(id,data) {
 
         var bar = barGroup
             .append("rect")
-                .attr("class", "bar");        
-        
+                .attr("class", "bar");  
+
+        var text=barGroup.
+            append("text")
+                .text(function(d){ return d.parameter;})
+                .attr("fill","#fff");
 
         me.render();
     };
@@ -56,7 +60,12 @@ function barchart(id,data) {
             .transition().duration(300)
                 .attr("y", function(d) { return scaleY(d.total); })
                 .attr("height", function(d) { return height - scaleY(d.total); });
-              
+
+        svg.selectAll("text")
+            .attr("class", "parameters")
+            .attr("y", height-2)
+            .attr("x",barWidth/2)
+            .attr("text-anchor","middle");
     };
 
 
