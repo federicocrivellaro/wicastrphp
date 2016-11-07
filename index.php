@@ -26,63 +26,65 @@
        </div>  
       </div>
   </div>
+
   <div class="container-fluid">
     <div class="row">
       <p class="col-xs-12">
       </p>
-
     </div>
-  <div class="presentation">
-    <h2>
-      HELLO THERE,<br/>
-      WELCOME TO THE<br/> TOUR THE STOOPS<br/> WIFI CHANNEL<br/>
-    </h2>  
-      You are now seeing some of best skateboarders
-      in the World running an amazing session.<br/>
-      Enjoy it !</h2>
+
+    <div class="presentation">
+      <h2>
+        HELLO THERE,<br/>
+        WELCOME TO THE<br/> TOUR THE STOOPS<br/> WIFI CHANNEL<br/>
+      </h2>   
+        You are now seeing skating some of best skateboarders
+        in the World <br/>
+        Enjoy it !</h2>
+
+      <div class="videoContainer">
+        <video controls>
+          <source src="assets/video/intro.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div> 
+
+      <p>
+    THIS NOVEMBER 2016, HUF AND THRASHER JOIN FORCES ONCE AGAIN FOR THEIR FOURTH ANNUAL STOOPS TOUR AND CAPSULE COLLECTION.</p>
+
+      <h2>TOUR PHOTOS</h2> 
+      <div class="swiper-container">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="assets/imgs/slide1.jpg"/>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/imgs/slide2.jpg"/>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/imgs/slide3.jpg"/>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/imgs/slide4.jpg"/>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/imgs/slide5.jpg"/>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/imgs/slide6.jpg"/>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/imgs/slide7.jpg"/>
+              </div>
+          </div>
+          <div class="swiper-pagination"></div>
+      </div>
 
 
-      
-    <div class="videoContainer">
-      <video controls autoplay>
-        <source src="assets/video/intro.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-      </video>
-    </div> 
 
-    <h2>TOUR PHOTOS</h2> 
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="assets/imgs/slide1.jpg"/>
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/imgs/slide2.jpg"/>
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/imgs/slide3.jpg"/>
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/imgs/slide4.jpg"/>
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/imgs/slide5.jpg"/>
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/imgs/slide6.jpg"/>
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/imgs/slide7.jpg"/>
-            </div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
+    <hr/>
 
     <h2>ABOUT</h2>  
-
-    <p>
-    THIS NOVEMBER 2016, HUF AND THRASHER JOIN FORCES ONCE AGAIN FOR THEIR FOURTH ANNUAL STOOPS TOUR AND CAPSULE COLLECTION.</p>
-    <hr/>
 
      <p>HUF WORLDWIDE IS A MANUFACTURER OF PREMIUM FOOTWEAR AND APPAREL DESIGNED FOR CONTEMPORARY SKATE AND LIFESTYLE.</p>
      
@@ -93,27 +95,27 @@
     <hr/>
 
     <h2>HUF CAPSULE</h2>
-
-    <img class="banner" src="assets/imgs/products/group.jpg"/>
-
-    <ul>
-      <li class="col-xs-6"><img src="assets/imgs/products/01.jpg"/></li>
-      <li class="col-xs-6"><img src="assets/imgs/products/02.jpg"/></li>
-      <li class="col-xs-6"><img src="assets/imgs/products/03.jpg"/></li>
-      <li class="col-xs-6"><img src="assets/imgs/products/04.jpg"/></li>
-      <li class="col-xs-6"><img src="assets/imgs/products/05.jpg"/></li>
-      <li class="col-xs-6"><img src="assets/imgs/products/06.jpg"/></li>
-      <li class="col-xs-6"><img src="assets/imgs/products/07.jpg"/></li>
-      <li class="col-xs-6"><img src="assets/imgs/products/08.jpg"/></li>
-      <li class="col-xs-6"><img src="assets/imgs/products/09.jpg"/></li>
-      <li class="col-xs-6"><img src="assets/imgs/products/10.jpg"/></li>
-
-    </ul>
-
     <img class="banner" src="assets/imgs/banner.jpeg"/>
 
+    <img class="banner" src="assets/imgs/products/group.jpg"/>
   </div>
 
+
+   <ul class="row">
+    <li class="col-xs-6"><img src="assets/imgs/products/01.jpeg"/></li>
+    <li class="col-xs-6"><img src="assets/imgs/products/02.jpeg"/></li>
+    <li class="col-xs-6"><img src="assets/imgs/products/03.jpeg"/></li>
+    <li class="col-xs-6"><img src="assets/imgs/products/04.jpeg"/></li>
+    <li class="col-xs-6"><img src="assets/imgs/products/05.jpg"/></li>
+    <li class="col-xs-6"><img src="assets/imgs/products/06.jpg"/></li>
+    <li class="col-xs-6"><img src="assets/imgs/products/07.jpg"/></li>
+    <li class="col-xs-6"><img src="assets/imgs/products/08.jpg"/></li>
+    <li class="col-xs-6"><img src="assets/imgs/products/09.jpg"/></li>
+    <li class="col-xs-6"><img src="assets/imgs/products/10.jpg"/></li>
+
+  </ul>
+
+</div>
   <!--
     <div class="feedback"></div>
     <div class="list"></div>-->
