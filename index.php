@@ -9,34 +9,110 @@
 
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" href="assets/libraries/jquery/jquery-ui.min.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="assets/libraries/roundSlider-1.3/roundslider.css">
+  <link rel="stylesheet" href="assets/libraries/swiper/css/swiper.min.css" media="screen" />
+    <script type="text/javascript" src="assets/libraries/swiper/js/swiper.min.js"></script>
+
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
-  <div class="pages">
-    <div class="page active">
-        <h1 class="title">
-          Welcome<br/> 
-          the music is set at
-          <span class="decibels">95db</span>
-        </h1>
-        <p>Set your ideal volume.<br/>
-        It will be adjusted every 30 minutes<br/> based on average preference</p>
-      <form action="/post.php" method="post">
-        <section>
-          <div class="control">
-              <div id="volume"></div>
-          </div>
-        </section>
-        <button type="submit"></button>
-      </form>
-      <div class="counter"></div>
-      <div id="barchart"></div>
+  
+  <div class="background">
+      <div class="overblock">
+        <div class="content">
+          <img src="assets/imgs/logo-huf.png"/>
+          <h1>TOUR THE STOOPS</h1>
+          <p> London • Copenaghen • Paris</p> 
+       </div>  
+      </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <p class="col-xs-12">
+      </p>
+
     </div>
-  </div>  
+  <div class="presentation">
+    <h2>
+      HELLO THERE,<br/>
+      WELCOME TO THE<br/> TOUR THE STOOPS<br/> WIFI CHANNEL<br/>
+    </h2>  
+      You are now seeing some of best skateboarders
+      in the World running an amazing session.<br/>
+      Enjoy it !</h2>
 
 
+      
+    <div class="videoContainer">
+      <video controls autoplay>
+        <source src="assets/video/intro.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+    </div> 
+
+    <h2>TOUR PHOTOS</h2> 
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="assets/imgs/slide1.jpg"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/imgs/slide2.jpg"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/imgs/slide3.jpg"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/imgs/slide4.jpg"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/imgs/slide5.jpg"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/imgs/slide6.jpg"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/imgs/slide7.jpg"/>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <h2>ABOUT</h2>  
+
+    <p>
+    THIS NOVEMBER 2016, HUF AND THRASHER JOIN FORCES ONCE AGAIN FOR THEIR FOURTH ANNUAL STOOPS TOUR AND CAPSULE COLLECTION.</p>
+    <hr/>
+
+     <p>HUF WORLDWIDE IS A MANUFACTURER OF PREMIUM FOOTWEAR AND APPAREL DESIGNED FOR CONTEMPORARY SKATE AND LIFESTYLE.</p>
+     
+     <p>INSPIRED BY FOUNDER KEITH HUFNAGEL’S UNIQUE SKATE EXPERIENCES, HUF EMBODIES CULTURAL INSPIRATION AND IDEAS, REPRESENTED BY ITS WORLD-RENOWN SKATE TEAM AND AMBASSADORS.
+     </p>
+     <p>SINCE 1981, THRASHER MAGAZINE’S MONTHLY PUBLICATION CAPTURES SKATE SUB-CULTURES THROUGH RAW AND HONEST STORYTELLING. BOTH ROOTED IN SKATEBOARDING, HUF AND THRASHER MAGAZINE SHARE COUNTER CULTURE,NON-CONFORMIST, MISFIT VIEWS THAT CONSTANTLY CHALLENGE THE STATUS QUO.</p>
+    
+    <hr/>
+
+    <h2>HUF CAPSULE</h2>
+
+    <img class="banner" src="assets/imgs/products/group.jpg"/>
+
+    <ul>
+      <li class="col-xs-6"><img src="assets/imgs/products/01.jpg"/></li>
+      <li class="col-xs-6"><img src="assets/imgs/products/02.jpg"/></li>
+      <li class="col-xs-6"><img src="assets/imgs/products/03.jpg"/></li>
+      <li class="col-xs-6"><img src="assets/imgs/products/04.jpg"/></li>
+      <li class="col-xs-6"><img src="assets/imgs/products/05.jpg"/></li>
+      <li class="col-xs-6"><img src="assets/imgs/products/06.jpg"/></li>
+      <li class="col-xs-6"><img src="assets/imgs/products/07.jpg"/></li>
+      <li class="col-xs-6"><img src="assets/imgs/products/08.jpg"/></li>
+      <li class="col-xs-6"><img src="assets/imgs/products/09.jpg"/></li>
+      <li class="col-xs-6"><img src="assets/imgs/products/10.jpg"/></li>
+
+    </ul>
+
+    <img class="banner" src="assets/imgs/banner.jpeg"/>
+
+  </div>
 
   <!--
     <div class="feedback"></div>
@@ -48,13 +124,12 @@
   <script type="text/javascript" src="assets/libraries/hammer/hammer.min.js"></script>
   <script type="text/javascript" src="assets/libraries/hammer/jquery.hammer.js"></script>
   <script type="text/javascript" src="assets/libraries/hammer/hammer-time.min.js"></script>
-  <script type="text/javascript" src="assets/libraries/roundSlider-1.3/roundslider.min.js"></script>
-  <script type="text/javascript" src="assets/libraries/d3/d3.min.js"></script>
+  <script type="text/javascript" src="assets/libraries/swiper/js/swiper.min.js"></script>
+
   <script type="text/javascript" src="js/common.js"></script>
   <script type="text/javascript" src="js/dataCheckConversion.js"></script>
-  <script type="text/javascript" src="js/form.js"></script>
-  <script type="text/javascript" src="js/barchart.js"></script>
   <script type="text/javascript" src="js/init.js"></script>
+
 
     <!-- /build -->
 
